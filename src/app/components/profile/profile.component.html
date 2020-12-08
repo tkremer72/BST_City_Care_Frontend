@@ -1,0 +1,221 @@
+<!-- <div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div> -->
+
+<!-- User Profile -->
+
+<!-- <div class='container'>
+
+  <div class='row'>
+    <div class='col s12 m12 l12'>
+      <div class='card' *ngIf="user && userIsAuthenticated && !isOrg">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        <div class='card-content'>
+          <font><b>Email: </b> {{user.email}}</font><br>
+          <font><b>Username: </b> {{user.username}}</font><br>
+          <font><b>Phone: </b> {{user.phone}}</font><br>
+          <font><b>Mobile: </b>{{user.mobile_phone}}</font><br>
+          <font><b>Address: </b> {{user.address1}}</font><br>
+          <font><b>City: </b> {{user.city}}</font><br>
+          <font><b>County: </b> {{user.county}}</font><br>
+          <font><b>State: </b> {{user.state}}</font><br>
+          <font><b>Zip: </b> {{user.zip}}</font><br>
+
+          <div class='card-action'>
+            <a *ngIf="isAuthenticated && !isLoading && !isOrg" routerLink="/city-care/create-request">NEW REQUEST</a>
+            <a routerLink="/city-care/home">HOME</a>
+            <a routerLink="/city-care/update-profile/{{user.id}}">UPDATE</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+ -->
+
+<!-- Org Profile -->
+
+<!-- <div class='container'>
+
+  <div class='row'>
+    <div class='col s12 m12 l12'>
+      <div class='card' *ngIf="user && userIsAuthenticated && isOrg">
+        <h1>{{user.org_name}}</h1>
+        <div class='card-content'>
+
+          <font><b>Email: </b>{{user.email}}</font><br>
+          <font><b>Contact: </b>{{user.contact_name}}</font><br>
+          <font><b>Phone: </b>{{user.phone}}</font><br>
+          <font><b>Mobile: </b>{{user.mobile_phone}}</font><br>
+          <font><b>Address: </b> {{user.address1}}</font><br>
+          <font><b>Fax: </b>{{user.fax}}</font><br>
+          <font><b>City: </b>{{user.city}}</font><br>
+          <font><b>County: </b>{{user.county}}</font><br>
+          <font><b>State: </b>{{user.state}}</font><br>
+          <font><b>Zip: </b> {{user.zip}}</font><br>
+
+          <div class='card-action'>
+            <a *ngIf="isAuthenticated && !isLoading && isOrg" routerLink="/city-care/create-listing">NEW LISTING</a>
+            <a routerLink="/city-care/home">HOME</a>
+            <a routerLink="/city-care/update-profile/{{user.id}}">UPDATE</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr *ngIf="userIsAuthenticated && isOrg"> -->
+<!-- Org Listings -->
+
+<!-- <mat-accordion multi="true" *ngIf="listings.length > 0 && !isLoading &&  userIsAuthenticated && isOrg">
+  <h2>My Listings</h2>
+  <mat-expansion-panel class='panel' *ngFor="let listing of listings">
+    <mat-expansion-panel-header>
+      <p>{{listing.description }}</p>
+    </mat-expansion-panel-header>
+    <p>Qty: {{listing.quantity}}</p>
+    <p>Need: {{listing.requirements}}</p>
+    <p>Date:{{ listing.availability | date }}</p>
+    <mat-action-row>
+      <a mat-button [routerLink]="['/city-care/update-listing', listing.id]">EDIT</a>
+      <button mat-button (click)="onClickDeleteListing(listing.id)">DELETE</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<hr *ngIf="userIsAuthenticated && !isOrg"> -->
+
+<!-- User Requests -->
+
+<!-- <mat-accordion multi="true" *ngIf="requests.length > 0 && !isLoading && userIsAuthenticated && !isOrg">
+  <h2>My Requests</h2>
+  <mat-expansion-panel class='panel' *ngFor="let request of requests">
+    <mat-expansion-panel-header>
+      <p>{{ request.name }}</p>
+    </mat-expansion-panel-header>
+    <p>Details: {{ request.details }}</p>
+    <p>Date Needed: {{ request.needByDate | date}}</p>
+    <mat-action-row>
+      <a mat-button [routerLink]="['/city-care/update-request', request.id]">EDIT</a>
+      <button mat-button (click)="onClickDeleteRequest(request.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion> -->
+
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<!-- User Profile -->
+
+<div class='container'>
+
+  <div class='row'>
+    <div class='col s12 m12 l12'>
+      <div class='card' *ngIf="user && userIsAuthenticated && !isOrg">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        <div class='card-content'>
+          <font><b>Email: </b> {{user.email}}</font><br>
+          <font><b>Username: </b> {{user.username}}</font><br>
+          <font><b>Phone: </b> {{user.phone}}</font><br>
+          <font><b>Mobile: </b>{{user.mobile_phone}}</font><br>
+          <font><b>Address: </b> {{user.address1}}</font><br>
+          <font><b>City: </b> {{user.city}}</font><br>
+          <font><b>County: </b> {{user.county}}</font><br>
+          <font><b>State: </b> {{user.state}}</font><br>
+          <font><b>Zip: </b> {{user.zip}}</font><br>
+
+          <div class='card-action'>
+            <a class="col s12 m4 l4" *ngIf="isAuthenticated && !isLoading && !isOrg"
+              routerLink="/city-care/create-request">NEW REQUEST</a>
+            <a class="col s12 m4 l4" routerLink="/city-care/home">HOME</a>
+            <a class="col s12 m4 l4" routerLink="/city-care/update-profile/{{user.id}}">UPDATE</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Org Profile -->
+
+<div class='container'>
+
+  <div class='row'>
+    <div class='col s12 m12 l12'>
+      <div class='card' *ngIf="user && userIsAuthenticated && isOrg">
+        <h1>{{user.org_name}}</h1>
+        <div class='card-content'>
+
+          <font><b>Email: </b>{{user.email}}</font><br>
+          <font><b>Contact: </b>{{user.contact_name}}</font><br>
+          <font><b>Phone: </b>{{user.phone}}</font><br>
+          <font><b>Mobile: </b>{{user.mobile_phone}}</font><br>
+          <font><b>Address: </b> {{user.address1}}</font><br>
+          <font><b>Fax: </b>{{user.fax}}</font><br>
+          <font><b>City: </b>{{user.city}}</font><br>
+          <font><b>County: </b>{{user.county}}</font><br>
+          <font><b>State: </b>{{user.state}}</font><br>
+          <font><b>Zip: </b> {{user.zip}}</font><br>
+
+          <div class='card-action'>
+            <a class="col s12 m4 l4" *ngIf="isAuthenticated && !isLoading && isOrg"
+              routerLink="/city-care/create-listing">NEW LISTING</a>
+            <a class="col s12 m4 l4" routerLink="/city-care/home">HOME</a>
+            <a class="col s12 m4 l4" routerLink="/city-care/update-profile/{{user.id}}">UPDATE</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr *ngIf="userIsAuthenticated && isOrg">
+<!-- Org Listings -->
+
+<mat-accordion multi="true" *ngIf="listings.length > 0 && !isLoading &&  userIsAuthenticated && isOrg">
+  <h2>My Listings</h2>
+  <mat-expansion-panel class='panel' *ngFor="let listing of listings">
+    <mat-expansion-panel-header>
+      <p>{{listing.description }}</p>
+    </mat-expansion-panel-header>
+    <p>Qty: {{listing.quantity}}</p>
+    <p>Need: {{listing.requirements}}</p>
+    <p>Date:{{ listing.availability | date }}</p>
+    <mat-action-row>
+      <a mat-button [routerLink]="['/city-care/update-listing', listing.id]">EDIT</a>
+      <button mat-button (click)="onClickDeleteListing(listing.id)">DELETE</button>
+    </mat-action-row>
+
+  </mat-expansion-panel>
+</mat-accordion>
+<hr *ngIf="userIsAuthenticated && !isOrg">
+
+<!-- User Requests -->
+
+<mat-accordion multi="true" *ngIf="requests.length > 0 && !isLoading && userIsAuthenticated && !isOrg">
+  <h2>My Requests</h2>
+  <mat-expansion-panel class='panel' *ngFor="let request of requests">
+    <mat-expansion-panel-header>
+      <p>{{ request.name }}</p>
+    </mat-expansion-panel-header>
+    <p>Details: {{ request.details }}</p>
+    <p>Date Needed: {{ request.needByDate | date}}</p>
+    <mat-action-row>
+      <a mat-button [routerLink]="['/city-care/update-request', request.id]">EDIT</a>
+      <button mat-button (click)="onClickDeleteRequest(request.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,89 @@
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<h2>Update your profile</h2>
+
+<div class="form card" *ngIf="user && !isLoading && userIsAuthenticated">
+  <h3>Details:</h3>
+  <p><span><b>Name:</b>&nbsp; {{user.first_name}} {{user.last_name}} <b>Phone:</b> {{user.phone}}</span> <br>
+    <span><b>Email:</b>&nbsp; {{user.email}} <b>Username:</b> {{user.username}}</span> <br>
+    <b>Address:</b>&nbsp; {{user.address1}}, {{user.city}}, {{user.state}}, {{user.zip}}</p>
+</div>
+<form class="card" (ngSubmit)="updateUser()" name="updateUser" *ngIf="user && !isLoading && userIsAuthenticated">
+  <div>
+    <label for="name">First Name: </label>&nbsp;
+    <input type="text" id="first_name" name="first_name" placeholder="{{user.first_name}}"
+      [(ngModel)]="user.first_name" />&nbsp;
+  </div>
+  <div>
+    <label for="name">Last Name: </label>&nbsp;
+    <input type="text" id="last_name" name="last_name" placeholder="{{user.last_name}}" [(ngModel)]="user.last_name" />
+  </div>
+  <div *ngIf="isOrg">
+    <label for="name">Contact Person: </label>&nbsp;
+    <input type="text" id="contact_name" name="contact_name" placeholder="{{user.contact_name}}"
+      [(ngModel)]="user.contact_name" />
+  </div>
+  <div *ngIf="isOrg">
+    <label for="name">Organization: </label>&nbsp;
+    <input type="text" id="org_name" name="org_name" placeholder="{{user.org_name}}" [(ngModel)]="user.org_name" />
+  </div>
+  <div>
+    <label for="name">Email: </label>&nbsp;
+    <input type="email" id="email" name="email" placeholder="{{user.email}}" [(ngModel)]="user.email" />&nbsp;
+  </div>
+  <div>
+    <label for="name">Username: </label>&nbsp;
+    <input type="text" id="username" name="username" placeholder="{{user.username}}" [(ngModel)]="user.username" />
+  </div>
+  <div>
+    <label for="name">Contact Method: </label>&nbsp;
+    <input type="text" id="contact_method" name="contact_method" placeholder="{{user.contact_method}}"
+      [(ngModel)]="user.contact_method" />
+
+  </div>
+  <div>
+    <label for="name">Phone: </label>&nbsp;
+    <input type="tel" id="phone" name="phone" placeholder="{{user.phone}}" [(ngModel)]="user.phone" />
+  </div>
+  <div>
+    <label for="name">Mobile: </label>&nbsp;
+    <input type="tel" id="mobile_phone" name="mobile_phone" placeholder="{{user.mobile_phone}}"
+      [(ngModel)]="user.mobile_phone" />
+  </div>
+  <div *ngIf="isOrg">
+    <label for="name">Fax: </label>&nbsp;
+    <input type="tel" name="fax" placeholder="{{user.fax}}" [(ngModel)]="user.fax" />
+  </div>
+  <div>
+    <label for="name">Address Line 1: </label>&nbsp;
+    <input type="text" id="address1" name="address1" placeholder="{{user.address1}}" [(ngModel)]="user.address1" />
+  </div>
+  <div *ngIf="isOrg">
+    <label for="name">Address Line 2: </label>&nbsp;
+    <input type="text" id="address2" name="address2" placeholder="{{user.address2}}" [(ngModel)]="user.address2" />
+  </div>
+  <div>
+    <label for="name">City: </label>&nbsp;
+    <input type="text" id="city" name="city" placeholder="{{user.city}}" [(ngModel)]="user.city" />
+  </div>
+  <div>
+    <label for="name">State: </label>&nbsp;
+    <input type="text" id="state" name="state" placeholder="{{user.state}}" [(ngModel)]="user.state" />
+  </div>
+  <div>
+    <label for="name">County</label>
+    <input type="text" id="county" name="county" placeholder="{{user.county}}" [(ngModel)]="user.county" />
+  </div>
+  <div>
+    <label for="name">Zip Code: </label>&nbsp;
+    <input type="text" id="zip" name="zip" placeholder="{{user.zip}}" [(ngModel)]="user.zip" />
+  </div>
+  <div class="col sm6 right-align">
+    <button class="waves-effect waves-light btn" type="submit" routerLink="/city-care/users-profile">Back</button>
+    <button class="waves-effect waves-light btn" type="submit">Update</button>
+  </div>
+</form>

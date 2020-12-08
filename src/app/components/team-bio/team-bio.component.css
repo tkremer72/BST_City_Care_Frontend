@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.about {
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto';
+}
+
+img {
+  height: 40px;
+  width: 40px;
+}
+
+.card,
+h2 {
+  margin: 1 auto;
+  text-align: center;
+}
+
+.card {
+  background-color: rgb(233, 233, 233);
+  margin: 7.5px 10px 5px 10px;
+}
+
+h2 {
+  margin: 10px 0 10px 0;
+  color: rgb(0, 0, 0);
+}
+
+h3 {
+  color: rgb(0, 0, 0);
+  padding-top: 10px;
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+
+.team-info {
+  margin: 7.5px 15px 0 15px;
+  text-align: center;
+}
+
+.thomas,
+.jonathan,
+.peyton,
+.jared {
+  width: 150px;
+  height: auto;
+  border: 2px inset rgb(0, 0, 0);
+}
+
+.card-text {
+  font-family: 'Roboto';
+  font-size: 14px;
+}

@@ -1,0 +1,113 @@
+/* :host {
+  display: block;
+  margin: 1rem auto;
+}
+
+.card-action {
+  border-top: 1px inset lightslategrey;
+  margin-top: 10px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  background-color: rgb(241, 241, 241);
+}
+
+h1 {
+  text-align: center;
+  margin: 15px 15px;
+}
+
+hr {
+  border: 3px inset lightslategrey;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+font {
+  font-size: 20px;
+}
+
+mat-action-row {
+  border-top: 1px inset lightslategrey;
+}
+
+.panel {
+  background-color: rgb(231, 231, 231);
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+} */
+
+:host {
+  display: block;
+  margin: 1rem auto;
+}
+
+.card-action {
+  border-top: 1px inset lightslategrey;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-action > a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  margin-right: 0px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  background-color: rgb(241, 241, 241);
+}
+
+h1 {
+  text-align: center;
+  margin: 15px 15px;
+}
+
+hr {
+  border: 3px inset lightslategrey;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+font {
+  font-size: 20px;
+}
+
+mat-action-row {
+  border-top: 1px inset lightslategrey;
+}
+
+.panel {
+  background-color: rgb(231, 231, 231);
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}

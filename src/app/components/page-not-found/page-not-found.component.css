@@ -1,0 +1,7 @@
+:host {
+          display: block;
+          margin: 5rem auto;
+        }
+      h1, h2 {
+        text-align: center;
+      }

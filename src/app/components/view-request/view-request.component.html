@@ -1,0 +1,22 @@
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<div *ngIf="request && user && !isLoading && userIsAuthenticated">
+  <div class="card">
+    Contact:&nbsp; {{user.first_name}} {{user.last_name}} <br>
+  <a href="mailto:{{user.email}}">{{ user.email }}</a>  <br>
+    Phone: &nbsp; {{ user.phone }} <br>
+    Mobile: &nbsp; {{ user.mobile_phone }} <br>
+    <hr>
+    Need: &nbsp; {{ request.name }} <br>
+    Details: &nbsp; {{ request.details }}<br>
+    Date Needed: &nbsp; {{ request.needByDate | date }} <br>
+  </div>
+</div>
+<div class="col sm6 right-align">
+  <button class="waves-effect waves-light btn back" routerLink="/city-care/site-postings">Back</button>&nbsp;
+
+</div>

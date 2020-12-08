@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  margin: 1rem auto;
+}
+
+mat-panel-description {
+  color: black;
+}
+
+.panel {
+  background-color: rgb(223, 223, 223);
+  text-align: start;
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+p {
+  text-align: left;
+  color: black;
+}
+
+hr {
+  margin: 20px 0 20px 0;
+}
+
+h3, h1 {
+  text-align: center;
+}

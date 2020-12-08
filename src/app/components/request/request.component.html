@@ -1,0 +1,44 @@
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<div *ngIf="userIsAuthenticated && !isOrg">
+  <form (ngSubmit)="createRequest()" name="createRequest" class="card">
+    <div>
+      <h2>Enter your request details below</h2>
+    </div>
+    <div>
+      <div>
+        <label>Name of Request</label>
+        <input type="text" name="name" placeholder="Enter a name for the request" [(ngModel)]="request.name" />
+      </div>
+      <div>
+        <br>
+        <label>
+          Give a description.
+          <p>Consider including the following
+            information:</p>
+          <ul>
+            <li>A brief details</li>
+            <li>Quantity</li>
+            <li>Urgency of the need</li>
+          </ul>
+        </label>
+
+        <input type="text" placeholder="Give a description" name="details" [(ngModel)]="request.details" />
+      </div>
+      <div>
+        <label>Needed by:</label>
+        <input type="date" id="needByDate" name="needByDate" placeholder="MM/DD/YYYY"
+          [(ngModel)]="request.needByDate" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6 right-align"><button type="submit"
+          class="waves-effect waves-light btn white-text">Request</button>
+      </div>
+    </div>
+  </form>
+</div>

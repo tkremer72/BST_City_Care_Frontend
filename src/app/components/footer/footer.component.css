@@ -1,0 +1,18 @@
+footer {
+  color: white;
+  font-family: Roboto;
+}
+
+a {
+  color: white;
+}
+
+.page-footer {
+  font-size: 19px;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}

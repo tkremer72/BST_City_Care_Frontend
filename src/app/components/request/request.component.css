@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  margin: 1rem auto;
+}
+
+button {
+  padding: 5px 15px;
+  background-color: rgb(29, 34, 59);
+  color: white;
+}
+
+.waves-effect {
+  background-color: rgb(29, 34, 59);
+}
+
+.waves-ripple {
+  background-color: white;
+}
+
+.card {
+  padding: 30px 30px;
+  background-color: rgb(241, 241, 241);
+  border: 3px inset lightslategrey;
+}
+
+form {
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  padding: 20px 20px;
+}
+
+#needByDate {
+  width: 150px;
+  padding-top: 20px;
+}

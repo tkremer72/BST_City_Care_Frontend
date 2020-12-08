@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  margin: 1rem auto;
+}
+
+#availability {
+  width: 150px;
+}
+
+button {
+  padding: 5px 15px;
+  margin-top: 20px;
+}
+
+form {
+  width: 100%;
+  height: auto;
+  margin: 20px 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  margin: 7px 7px 7px 7px;
+  padding: 16px 16px;
+}
+
+.card {
+  padding: 20px 20px;
+  background-color: rgb(241, 241, 241);
+  border: 3px inset lightslategrey;
+}
+
+form {
+  height: auto;
+}
+
+#quantity {
+  width: 75px;
+}
+
+.waves-effect {
+  background-color: rgb(29, 34, 59);
+  color: white;
+
+}
+
+.waves-ripple {
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: auto;
+  }
+}

@@ -1,0 +1,47 @@
+<ul id="dropdown1" class="waves-effect dropdown-content">
+  <li><a class="waves-link" value="email" routerLink="/city-care/email-login" routerLinkActive="activebutton">Email</a>
+  </li>
+  <li class="divider"></li>
+  <li><a class="waves-link" value="username" routerLink="/city-care/username-login"
+      routerLinkActive="activebutton">Username</a></li>
+</ul>
+
+<ul id="dropdown2" class="waves-effect dropdown-content">
+  <li><a class="waves-link" value="email" routerLink="/city-care/email-login" routerLinkActive="activebutton">Email</a>
+  </li>
+  <li class="divider"></li>
+  <li><a class="waves-link" value="username" routerLink="/city-care/username-login"
+      routerLinkActive="activebutton">Username</a></li>
+</ul>
+
+<nav>
+
+  <div class="nav-wrapper">
+    <a routerLink="/city-care/home" class="brand-logo"><img class='brand-logo'
+        src='../../../assets/images/CityCare2.png'><span class="sr-only">(current)</span></a>
+    <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="!userIsAuthenticated"><a class='waves-effect' routerLink="/city-care/user-registration">Register</a>
+      </li>
+      <li *ngIf="userIsAuthenticated"><a class="waves-effect" routerLink="/city-care/users-profile">Profile</a></li>
+      <li *ngIf="userIsAuthenticated"><a class='waves-effect' routerLink="/city-care/site-postings">Postings</a></li>
+      <li *ngIf="userIsAuthenticated"><a class='waves-effect' routerLink="/city-care/about-us">About Us</a></li>
+      <li *ngIf="userIsAuthenticated"><a class='waves-effect' (click)="onLogout()">Logout</a></li>
+      <li *ngIf="!userIsAuthenticated"><a class="dropdown-trigger" routerLink="#!" data-target="dropdown1">Login<i
+            class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<ul class="sidenav" id="mobile-demo">
+  <li *ngIf="!userIsAuthenticated"><a routerLink="/city-care/user-registration">Register</a></li>
+  <li *ngIf="userIsAuthenticated"><a class="waves-effect" routerLink="/city-care/users-profile">Profile</a></li>
+  <li *ngIf="userIsAuthenticated"><a routerLink="/city-care/site-postings">Postings</a></li>
+  <li *ngIf="userIsAuthenticated"><a routerLink="/city-care/about-us">About Us</a></li>
+
+  <li *ngIf="userIsAuthenticated"><a (click)="onLogout()">Logout</a></li>
+  <li *ngIf="!userIsAuthenticated"><a class="dropdown-trigger" routerLink="#!" data-target="dropdown2">Login<i
+        class="material-icons right">arrow_drop_down</i></a></li>
+</ul>

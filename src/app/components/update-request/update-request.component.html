@@ -1,0 +1,58 @@
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<div *ngIf="request && !isLoading && userIsAuthenticated && !isOrg" class="card">
+  <div>
+    <p>
+      Request:&nbsp; {{request.name}} <br>
+      Details:&nbsp; {{request.details}}<br>
+      Date Needed:&nbsp; {{request.needByDate | date}} <br>
+    </p>
+    <div class="row">
+      <div class="col s6 right-align">
+        <button type="back" class="waves-effect waves-light btn white-text"
+          routerLink="/city-care/users-profile">Back</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div *ngIf="request && !isLoading && userIsAuthenticated && !isOrg">
+  <form *ngIf="request !isLoading" (ngSubmit)="updateRequest()" name="updateRequest" class="card">
+    <div>
+      <h2>Update your request</h2>
+    </div>
+    <div>
+      <div>
+        <label>Name of request</label>
+        <input type="text" name="name" placeholder="Request Title" [(ngModel)]="request.name" />
+      </div>
+      <div>
+        <label>
+          <p>Give a description. Consider including the following
+            information:</p>
+          <ul>
+            <li>A brief details</li>
+            <li>Quantity</li>
+            <li>Urgency of the need</li>
+          </ul>
+        </label> <input type="text" placeholder="Details" name="request.details" [(ngModel)]="request.details" />
+      </div>
+      <div>
+        <label>Needed by:</label>
+        <input type="date" id="needByDate" name="needByDate" placeholder="When?" [(ngModel)]="request.needByDate" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col sm6 right-align">
+        <button type="submit" class="waves-effect waves-light btn white-text">Submit Request</button>
+      </div>
+    </div>
+  </form>
+</div>

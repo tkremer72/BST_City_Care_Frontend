@@ -1,0 +1,57 @@
+<div *ngIf="isLoading" class="spinner-border text-primary">
+
+  <span class="sr-only">Loading...</span>
+
+</div>
+
+<div class="card" *ngIf="listing && !isLoading && userIsAuthenticated && isOrg">
+  <div>
+    <p> Qty:&nbsp; {{ listing.quantity }} <br>
+      Listing: &nbsp; {{ listing.description }} <br>
+      Requirements:&nbsp; {{ listing.requirements }}<br>
+      Date Available:&nbsp; {{ listing.availability }} <br>
+    </p>
+    <div class="row">
+      <div class="col s6 right-align"> <button class="waves-effect waves-light btn white-text"
+          routerLink="/city-care/users-profile">Back</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div *ngIf="listing && !isLoading && userIsAuthenticated && isOrg" class="card">
+  <h2>Update This Listing</h2>
+
+  <form (ngSubmit)="updateListing()" name="updateListing">
+    <div>
+      <label>Quanity of good:</label><br>
+      <input type="number" id="quantity" name="quantity" placeholder="listing.quantity"
+        [(ngModel)]="listing.quantity" />
+    </div>
+
+    <div>
+      <label>Give a description:</label>
+      <input type="text" name="description" placeholder="Description" [(ngModel)]="listing.description" />
+    </div>
+    <div>
+      <label>Requirements for pickup:</label>
+      <input type="text" name="requirements" placeholder="Requirements" [(ngModel)]="listing.requirements" />
+    </div>
+    <div>
+      <label>When is it available?</label><br>
+      <input type="date" id="availability" name="availability" [placeholder]="listing.availability | date"
+        [(ngModel)]="listing.availability" />
+    </div>
+
+    <div class="row">
+      <div class="col s6 right-align">
+        <button class="waves-effect waves-light btn white-text" type="submit">Update</button>
+      </div>
+    </div>
+  </form>
+
+
+</div>
